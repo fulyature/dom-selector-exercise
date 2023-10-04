@@ -14,3 +14,27 @@ console.log(h1);
 
 h1.textContent = "DOM Introduction";
 console.log(h1.textContent);
+console.log(h1.innerText);
+console.log(h1.innerHTML);
+
+const myInputs = document.getElementsByTagName("input");
+console.log(myInputs);
+console.log("Size:", myInputs.length);
+
+console.log(myInputs[0]);
+console.log(myInputs[1]);
+//? Array'e cevilebilir.
+const myLists = document.getElementsByTagName("li");
+const myListsArr = [...myLists]; //?Array'e cevir
+console.log(myListsArr);
+
+myListsArr.forEach((li) => (li.style.color = "pink"));
+myListsArr.forEach((a) => (a.style.backgroundColor = "purple"));
+
+//?Alternative olarak
+
+const myListsArr1 = Array.from(myLists); //?Array'e cevir
+
+console.log(myListsArr1);
+
+myListsArr1.map((li) => (li.style.listStyleType = "none"));
