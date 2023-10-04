@@ -38,3 +38,8 @@ const myListsArr1 = Array.from(myLists); //?Array'e cevir
 console.log(myListsArr1);
 
 myListsArr1.map((li) => (li.style.listStyleType = "none"));
+
+const lists = document.getElementsByClassName("list");
+
+lists[2].innerHTML = "fulya";
+lists[2].innerHTML = `<h1>FULYA</h1>`;
