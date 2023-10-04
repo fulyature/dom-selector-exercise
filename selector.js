@@ -7,3 +7,10 @@ addButon.style.padding = "8px";
 
 //*değer atama
 addButon.value = "SAVE";
+
+//*h1
+const h1 = document.getElementById("head1");
+console.log(h1);
+
+h1.textContent = "DOM Introduction";
+console.log(h1.textContent);
