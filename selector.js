@@ -194,10 +194,24 @@ const ula = document.createElement("ul");
 document.querySelector(".item-list").before(ula);
 
 addBtn.addEventListener("click", (e) => {
-  const li = document.createElement("li");
-  ula.appendChild(li);
-  const textLi = document.createTextNode(input.value);
-  li.appendChild(textLi);
-  input.value = "";
-  input.focus();
+  if (!input.value) {
+    alert("please enter a comment");
+  } else {
+    const li = document.createElement("li");
+    ula.appendChild(li);
+    const textLi = document.createTextNode(input.value);
+    li.appendChild(textLi);
+    input.value = "";
+    input.focus();
+  }
+});
+
+//? input'un üzerinde iken bir klavye tusuna basilirsa calis
+document.querySelector("#input").addEventListener("keydown", (e) => {
+  //   console.log(e.code)
+  //   console.log(e.keyCode)
+  //? Basilan tus Enter ise
+  if (e.code === "Enter") {
+    addBtn.click(); //? add butonun tiklanma fonksiyonu calistir.
+  }
 });
