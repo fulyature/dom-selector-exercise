@@ -160,3 +160,35 @@ newDiv.innerHTML += `
   <li>C</li>
   <li>go</li>
 </ul>`;
+
+//*--------------------------------------------
+//********EVENTS************* */
+//*********************** */
+
+// document.querySelector("header h1").onmouseover = function () {
+//   document.querySelector("header h1").style.color = "blue";
+// };
+
+const heading1 = document.querySelector("header h1");
+
+heading1.onmouseover = function () {
+  heading1.style.color = "blue";
+};
+
+heading1.onmouseout = function () {
+  heading1.style.color = "black";
+};
+
+const printHello = () => {
+  document.write("Hello");
+};
+
+//? onload event'ı html ve css kodlarinini render edilmesini akabinde calisir.
+window.onload = printHello();
+
+window.addEventListener("load", () => {
+  document.getElementById("input").focus();
+});
+
+const addBtn = document.querySelector("#btn");
+addBtn.addEventListener("click", () => {});
