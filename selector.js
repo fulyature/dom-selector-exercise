@@ -43,3 +43,32 @@ const lists = document.getElementsByClassName("list");
 
 lists[2].innerHTML = "fulya";
 lists[2].innerHTML = `<h1>FULYA</h1>`;
+lists[3].innerText = `<h1>ZEYNEP</h1>`;
+
+/*id secıldı*/
+const header = document.querySelector("#head1");
+console.log(header);
+
+/*class secıldı*/
+const itemList = document.querySelector(".add-item");
+console.log(itemList);
+
+//? CSS deki selector mantigi kullanabilir
+const otherH2 = document.querySelector("section h2");
+console.log(otherH2);
+
+// Yukarı yönde traverse
+const head2 = document.querySelector(".head2");
+console.log(head2);
+console.log(head2.parentElement);
+console.log(head2.parentNode.parentNode);
+
+//closest()
+
+const list = document.querySelector(".list");
+console.log(list.textContent);
+
+console.log(list.closest("body").querySelector("header h1").innerText);
+
+//Asagı yonde traverse
+console.log(itemList.children);
