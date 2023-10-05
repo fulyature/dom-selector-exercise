@@ -73,7 +73,7 @@ console.log(list.closest("body").querySelector("header h1").innerText);
 //Asagı yonde traverse
 console.log(itemList.children);
 
-//***  CREATE NODE */
+//************  CREATE NODE */
 
 // inputun altında p elementi oluşturma;
 
@@ -98,3 +98,65 @@ console.log(newP);
 const main = document.querySelector("main");
 
 main.appendChild(newP); // akışta en sona ekler
+
+//item-list in onune bastı. diğerini ezdi.aynı elementı dom a bır kere ekleyebılırsın.sondakı ılkını ezer
+const itemListSection = document.querySelector(".item-list");
+itemListSection.before(newP);
+
+//*----ID , CLASS ----
+
+//1.YONTEM
+
+newP.id = "paragraf";
+newP.className = "par raf";
+
+//2.Yöntem
+newP.setAttribute("id", "new-id"); //eskisinin üzerine yazar
+
+newP.setAttribute("class", "new-class"); //eskisinin üzerine yazar
+
+newP.classList.add("border"); //class ekleme
+
+console.log(newP.classList.contains("border")); // iceriyorsa ? true döner
+
+// classList.toggle() toggle tersleme mantıgı. varsa kaldırır; yoksa ekler
+
+newP.classList.toggle("fly");
+
+//classList.remove()  kaldırır
+
+//*-----ID CLASS GİBİ ÖZELLİKLERİ OKUMA -----
+
+//1- YÖNTEM
+
+console.log(newP.id);
+console.log(newP.className);
+
+//2-YÖNTEM
+
+console.log(newP.getAttribute("id"));
+console.log(newP.getAttribute("class"));
+
+//* ------- YENI BIR ELEMENT OLUSTURMA (INNERHTML)------
+const ul = document.querySelector("ul"); //statik ul nın devamına bastık
+
+ul.innerHTML += ` 
+   <li>C++</li>
+   <li>java</li>
+   <li>C</li>
+   <li>go</li>`;
+
+//* ------- YENI BIR ELEMENT OLUSTURMA (INNERHTML)------
+
+const newDiv = document.createElement("div");
+newDiv.id = "my-div";
+itemListSection.after(newDiv);
+
+newDiv.innerHTML += `
+<h2 class="par center">Languages</h2>
+<ul>
+  <li>C++</li>
+  <li>java</li>
+  <li>C</li>
+  <li>go</li>
+</ul>`;
