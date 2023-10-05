@@ -72,3 +72,29 @@ console.log(list.closest("body").querySelector("header h1").innerText);
 
 //Asagı yonde traverse
 console.log(itemList.children);
+
+//***  CREATE NODE */
+
+// inputun altında p elementi oluşturma;
+
+const myInput = document.querySelector("#input");
+
+//1-create
+
+const newP = document.createElement("p");
+
+//2-eğer text tabanlı ıse text dugumunu olustur
+
+const text = document.createTextNode(myInput.value);
+
+//3-oluşturulan text duğumunu yenı elemente bağla append
+
+newP.appendChild(text);
+
+console.log(newP);
+
+//4-Yeni elementin DOM reee ye baglanması(append)
+
+const main = document.querySelector("main");
+
+main.appendChild(newP); // akışta en sona ekler
