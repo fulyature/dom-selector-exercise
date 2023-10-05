@@ -189,6 +189,15 @@ window.onload = printHello();
 window.addEventListener("load", () => {
   document.getElementById("input").focus();
 });
-
 const addBtn = document.querySelector("#btn");
-addBtn.addEventListener("click", () => {});
+const ula = document.createElement("ul");
+document.querySelector(".item-list").before(ula);
+
+addBtn.addEventListener("click", (e) => {
+  const li = document.createElement("li");
+  ula.appendChild(li);
+  const textLi = document.createTextNode(input.value);
+  li.appendChild(textLi);
+  input.value = "";
+  input.focus();
+});
